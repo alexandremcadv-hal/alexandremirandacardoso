@@ -1,1 +1,544 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teixeira Machado & Miranda Cardoso Advogados</title>
+  <meta name="description" content="Escritório de advocacia com atuação estratégica em contencioso cível, família e sucessões, consumidor e Direito Constitucional aplicado." />
+
+  <style>
+    :root {
+      --bg: #f5f5f5;
+      --bg-alt: #ffffff;
+      --primary: #123047;
+      --primary-soft: #1f4462;
+      --accent: #c49a3a;
+      --text: #222222;
+      --muted: #707070;
+      --border: #dddddd;
+      --radius: 10px;
+      --shadow: 0 8px 20px rgba(0,0,0,0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0f2233, #173854);
+      color: #ffffff;
+      padding: 24px 20px;
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .logo-block {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .logo-line-1 {
+      font-size: 1rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #cfd7df;
+    }
+
+    .logo-line-2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+
+    .logo-line-3 {
+      font-size: 0.85rem;
+      color: #b9c3cc;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 18px;
+      list-style: none;
+      font-size: 0.9rem;
+    }
+
+    nav a {
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+    }
+
+    nav a:hover {
+      border-bottom-color: var(--accent);
+    }
+
+    .hero {
+      padding: 40px 20px 30px;
+      background: linear-gradient(180deg, #f7f7f7, #eceff3);
+      border-bottom: 1px solid #e1e4e8;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      align-items: center;
+      gap: 32px;
+    }
+
+    .hero h1 {
+      font-size: 1.9rem;
+      margin-bottom: 12px;
+      color: var(--primary);
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .hero-highlight {
+      padding: 10px 14px;
+      background-color: #ffffff;
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+      font-size: 0.95rem;
+      box-shadow: var(--shadow);
+      margin-bottom: 18px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    .btn-primary {
+      background-color: var(--primary-soft);
+      color: #ffffff;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: var(--shadow);
+    }
+
+    .btn-primary:hover {
+      background-color: #213e5d;
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: var(--primary-soft);
+      padding: 9px 16px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      border: 1px solid var(--primary-soft);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-outline:hover {
+      background-color: rgba(255,255,255,0.8);
+    }
+
+    .hero-badge {
+      font-size: 0.8rem;
+      color: #e1e7ee;
+      background-color: rgba(0,0,0,0.15);
+      border-radius: 999px;
+      padding: 6px 11px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-badge span.dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #3fd37b;
+    }
+
+    main {
+      padding: 30px 20px 40px;
+    }
+
+    section {
+      margin-bottom: 32px;
+    }
+
+    section h2 {
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+      color: var(--primary);
+    }
+
+    section p {
+      font-size: 0.96rem;
+      color: var(--text);
+    }
+
+    .card {
+      background-color: var(--bg-alt);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .list-clean {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .list-clean li {
+      margin-bottom: 6px;
+      font-size: 0.93rem;
+    }
+
+    .list-clean li::before {
+      content: "•";
+      margin-right: 6px;
+      color: var(--accent);
+    }
+
+    .emphasis {
+      font-weight: 600;
+      color: var(--primary-soft);
+    }
+
+    .contact-box {
+      display: grid;
+      grid-template-columns: 2fr 3fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .contact-details p {
+      font-size: 0.94rem;
+      margin-bottom: 6px;
+    }
+
+    .contact-details a {
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+    }
+
+    footer {
+      padding: 14px 20px;
+      font-size: 0.8rem;
+      color: var(--muted);
+      border-top: 1px solid #dde1e6;
+      background-color: #f2f4f7;
+    }
+
+    footer .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 840px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+      .top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav ul {
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="top-bar">
+      <div class="logo-block">
+        <div class="logo-line-1">Teixeira Machado &amp; Miranda Cardoso</div>
+        <div class="logo-line-2">ADVOGADOS</div>
+        <div class="logo-line-3">Atuação estratégica em contencioso e prevenção de litígios</div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#quem-somos">Quem somos</a></li>
+          <li><a href="#atuacao">Atuação</a></li>
+          <li><a href="#diferenciais">Diferenciais</a></li>
+          <li><a href="#publicacoes">Publicações</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-inner">
+    <div>
+      <h1>Advocacia técnica, combativa e responsável.</h1>
+      <p class="hero-subtitle">
+        Atuação focada em contencioso cível, família e sucessões, consumidor e Direito Constitucional aplicado,
+        com construção rigorosa de peças, estratégia e respeito à prova.
+      </p>
+      <div class="hero-highlight">
+        Acompanhamento próximo de cada processo, análise minuciosa dos autos e atuação coerente em todas as instâncias.
+      </div>
+      <div class="hero-actions">
+        <a href="#contato" class="btn-primary">Fale com o escritório</a>
+        <a href="#publicacoes" class="btn-outline">Ver publicações e pareceres</a>
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:10px; align-items:flex-start;">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        Agenda por atendimento remoto e presencial, sob consulta.
+      </div>
+      <p style="font-size:0.9rem; color:#dde4ec;">
+        Cada caso é tratado como um projeto jurídico completo: estudo, provas, estratégia, riscos
+        e possibilidades de composição são avaliados com franqueza e seriedade.
+      </p>
+    </div>
+  </div>
+</section>
+
+<main>
+  <div class="container">
+
+    <section id="quem-somos">
+      <div class="card">
+        <div class="tag">Quem somos</div>
+        <h2>Perfil do escritório</h2>
+        <p>
+          O <span class="emphasis">Teixeira Machado &amp; Miranda Cardoso Advogados</span> é um escritório
+          voltado à solução responsável de conflitos, com foco em causas cíveis, familiares e sucessórias
+          que exigem análise cuidadosa da prova e construção de estratégia processual consistente.
+        </p>
+        <p style="margin-top:8px;">
+          A atuação combina experiência prática em contencioso com sólida base teórica em Direito Civil,
+          Constitucional e do Consumidor, permitindo enfrentar litígios complexos – em especial aqueles
+          que envolvem patrimônio, herança, contratos, relações familiares e responsabilidade civil.
+        </p>
+        <p style="margin-top:8px;">
+          O trabalho é conduzido com postura técnica, linguagem clara para o cliente e firmeza na defesa
+          de direitos, sempre dentro dos limites éticos da advocacia.
+        </p>
+      </div>
+    </section>
+
+    <section id="atuacao">
+      <h2>Áreas de atuação selecionadas</h2>
+      <div class="grid-3">
+        <div class="card">
+          <div class="tag">Cível estratégico</div>
+          <p class="muted">
+            Atuação em ações de cobrança, responsabilidade civil, revisão contratual, cumprimento de sentença
+            e medidas de urgência. Foco na coerência entre pedido, prova e risco real do litígio.
+          </p>
+        </div>
+        <div class="card">
+          <div class="tag">Família e sucessões</div>
+          <p class="muted">
+            Inventário, partilha, alimentos, exoneração, discussão de planejamento sucessório e fraude à legítima.
+            Especial atenção a provas documentais, histórico familiar e proteção de herdeiros vulneráveis.
+          </p>
+        </div>
+        <div class="card">
+          <div class="tag">Consumidor &amp; contratos</div>
+          <p class="muted">
+            Relações de consumo em serviços essenciais, contratos bancários, planos de saúde, fornecedores
+            de grande porte e concessionárias. Análise cuidadosa de cláusulas e práticas abusivas.
+          </p>
+        </div>
+        <div class="card">
+          <div class="tag">Trabalho (pontual)</div>
+          <p class="muted">
+            Questões pontuais envolvendo descontos em aposentadoria, cumprimento de acórdão e defesa de direitos
+            fundamentais em processos trabalhistas específicos.
+          </p>
+        </div>
+        <div class="card">
+          <div class="tag">Direito Constitucional aplicado</div>
+          <p class="muted">
+            Uso de princípios e garantias constitucionais em ações e recursos, especialmente em temas de
+            devido processo legal, contraditório, ampla defesa e dignidade da pessoa humana.
+          </p>
+        </div>
+        <div class="card">
+          <div class="tag">Consultoria e prevenção</div>
+          <p class="muted">
+            Análise prévia de riscos, orientação na formação de provas e revisão de documentos para reduzir
+            a probabilidade de litígios futuros ou fortalecê-los quando inevitáveis.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="diferenciais">
+      <div class="card">
+        <div class="tag">Diferenciais</div>
+        <h2>Como o escritório trabalha</h2>
+        <div class="grid-2">
+          <div>
+            <ul class="list-clean">
+              <li><span class="emphasis">Análise integral dos autos</span> antes de qualquer medida relevante.</li>
+              <li><span class="emphasis">Peças densas e fundamentadas</span>, com construção narrativa e técnica alinhadas.</li>
+              <li><span class="emphasis">Uso criterioso de recursos</span>, evitando contencioso temerário ou meramente protelatório.</li>
+              <li><span class="emphasis">Diálogo transparente com o cliente</span> sobre riscos, limites e expectativas reais.</li>
+            </ul>
+          </div>
+          <div>
+            <ul class="list-clean">
+              <li><span class="emphasis">Atenção a provas e documentos</span>, inclusive em temas como VGBL, herança e sonegados.</li>
+              <li><span class="emphasis">Atuação coordenada em múltiplos processos</span> ligados ao mesmo núcleo familiar ou patrimonial.</li>
+              <li><span class="emphasis">Postura firme perante órgãos públicos</span>, respeitando a técnica e a urbanidade.</li>
+              <li><span class="emphasis">Atualização constante</span> em jurisprudência e doutrina das áreas atendidas.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="publicacoes">
+      <h2>Publicações e textos</h2>
+      <div class="grid-2">
+        <div class="card">
+          <div class="tag">Estudos e pareceres</div>
+          <p class="muted">
+            O escritório desenvolve textos técnicos e reflexões práticas sobre temas como:
+          </p>
+          <ul class="list-clean" style="margin-top:6px;">
+            <li>Uso de VGBL e instrumentos financeiros em contexto sucessório.</li>
+            <li>Fraude à legítima e proteção de herdeiros necessários.</li>
+            <li>Limites à penhora de aposentadoria e à execução sobre verbas de natureza alimentar.</li>
+            <li>Estratégias processuais em ações de condomínio e responsabilidade civil.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="tag">Disponibilização futura</div>
+          <p class="muted">
+            Textos selecionados serão gradualmente disponibilizados nesta página, em linguagem acessível
+            sem perder a precisão técnica, com o objetivo de orientar clientes e registrar a linha de atuação do escritório.
+          </p>
+          <p class="muted" style="margin-top:8px;">
+            Até lá, publicações específicas podem ser solicitadas diretamente ao escritório, conforme o caso e a pertinência.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato">
+      <div class="card contact-box">
+        <div>
+          <div class="tag">Contato</div>
+          <h2>Fale com o escritório</h2>
+          <p class="muted" style="margin-top:6px;">
+            Atendimentos mediante agendamento prévio. Para análise inicial de caso ou envio de documentos,
+            utilize os canais abaixo.
+          </p>
+        </div>
+        <div class="contact-details">
+          <p><strong>E-mail:</strong> <a href="mailto:contato@tmcardosoadv.com.br">contato@tmcardosoadv.com.br</a></p>
+          <p><strong>WhatsApp profissional:</strong> <a href="https://wa.me/5500000000000" target="_blank" rel="noopener noreferrer">+55 (00) 00000-0000</a></p>
+          <p><strong>Atendimento remoto:</strong> videoconferência (link enviado após agendamento).</p>
+          <p><strong>Cidade-base de atuação:</strong> São Paulo – SP.</p>
+          <p class="muted" style="margin-top:6px;">
+            Não são fornecidas consultas ou pareceres completos por mensagens rápidas.
+            Cada caso exige análise responsável de documentos e da situação concreta.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>© <span id="year"></span> Teixeira Machado &amp; Miranda Cardoso Advogados. Todos os direitos reservados.</div>
+    <div>Site institucional com finalidade exclusivamente informativa, em conformidade com as normas éticas da OAB.</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
 
